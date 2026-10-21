@@ -8,6 +8,8 @@ while True:
     if not nombre:
         break
 
+    # PokeAPI usa guiones en nombres compuestos, como mr-mime.
+    nombre = "-".join(nombre.replace("_", " ").split())
     url = f"https://pokeapi.co/api/v2/pokemon/{nombre}"
 
     try:
